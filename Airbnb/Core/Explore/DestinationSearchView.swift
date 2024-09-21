@@ -22,18 +22,16 @@ struct DestinationSearchView: View {
 
     var body: some View {
         VStack {
-            HStack{
+            HStack {
                 Button {
                     withAnimation(.snappy) {
                         show.toggle()
                     }
-
-                }label: {
+                } label: {
                     Image(systemName: "xmark.circle")
                         .imageScale(.large)
                         .foregroundStyle(.red)
                 }
-
                 Spacer()
 
                 if !destination.isEmpty {
@@ -50,7 +48,6 @@ struct DestinationSearchView: View {
             VStack(alignment: .leading) {
                 if selectedOption == .location{
 
-
                     Text("Where to")
                         .font(.headline)
                         .fontWeight(.semibold)
@@ -59,7 +56,7 @@ struct DestinationSearchView: View {
                         Image(systemName: "magnifyinglass")
                             .imageScale(.small)
 
-                        TextField("Search destinations",text: $destination)
+                        TextField("Search Destinations",text: $destination)
                             .font(.subheadline)
 
                     }
@@ -76,10 +73,8 @@ struct DestinationSearchView: View {
                     .fontWeight(.semibold)
                 } else {
                     CollaspedPickerView(title: "where", description: "Add destination")
-
                 }
             }
-
             .modifier(CollaspibleDestinationViewModifier())
             .frame(height: selectedOption == .location ? 120: 64)
             .onTapGesture {
@@ -129,7 +124,6 @@ struct DestinationSearchView: View {
 
             } else {
                 CollaspedPickerView(title: "Who", description: "Add Guests")
-
             }
         }
         .modifier(CollaspibleDestinationViewModifier())

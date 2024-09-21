@@ -22,6 +22,7 @@ struct ExploreView: View {
                                 showDestinationSearchView.toggle()
                             }
                         }
+
                     LazyVStack(spacing: 32) {
                         ForEach(0...10, id: \.self) { listing in
                             NavigationLink(value:listing) {
@@ -35,9 +36,8 @@ struct ExploreView: View {
                 }
                 .navigationDestination(for: Int.self) { listing in
                     ListingDetailView()
-                        .navigationBarBackButtonHidden()
+                    .navigationBarBackButtonHidden()
                 }
-
             }
         }
     }

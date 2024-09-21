@@ -22,7 +22,6 @@ struct ListingImageCarouselView: View {
                     .scaledToFill()
             }
         }
-       
         .tabViewStyle(.page)
     }
 }

@@ -10,11 +10,6 @@ import MapKit
 
 struct ListingDetailView: View {
 
-    var images = [
-        "listing-2",
-        "listing-3",
-        "listing-4",
-    ]
     @Environment(\.dismiss) var dismiss
     var body: some View {
         ScrollView {
@@ -34,6 +29,7 @@ struct ListingDetailView: View {
                     .padding(32)
                 }
             }
+
             VStack(alignment: .leading,spacing: 8) {
                 Text("Maimi Village")
                     .font(.title)
@@ -161,8 +157,6 @@ struct ListingDetailView: View {
                     }
 
                 }
-
-
             }
             .padding()
 
@@ -179,6 +173,7 @@ struct ListingDetailView: View {
             .padding()
 
         }
+        .toolbar(.hidden,for:.tabBar)
         .ignoresSafeArea()
         .padding(.bottom,64)
         .overlay(alignment:.bottom) {
@@ -203,7 +198,7 @@ struct ListingDetailView: View {
                     Spacer()
 
                     Button {
-
+//                        .tabItem { Label("Explore",systemImage:"magnifyingGlass") }
                     }label:{
                         Text("Reserve")
                             .foregroundStyle(.white)
